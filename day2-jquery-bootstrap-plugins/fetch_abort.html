@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <button id="submit">Submit</button>
+    <button id="cancel">Cancel</button>
+
+    <script>
+        $(function () {
+            var controller;
+
+
+            $('#submit').click(function () {
+                controller = new AbortController();
+                var signal = controller.signal;
+                fetch('https://s3.amazonaws.com/x265.org/video/BigBuckBunny_2000hevc.mp4', {
+                    method: 'GET',
+                    signal
+                }).then(
+                    function (res) {
+                        console.log(res);
+                    }).catch(function (er) {
+                    console.log(er);
+                })
+            });
+
+            $('#cancel').click(function () {
+                controller.abort();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

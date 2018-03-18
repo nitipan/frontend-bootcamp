@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+
+
+    <button id="btnOK">OK</button>
+
+    <script>
+        $(function () {
+            $('#btnOK').click(function () {
+
+                var people1 = fetch('https://swapi.co/api/people/1')
+                    .then(function (response) {
+                        return response.json();
+                    });
+
+                var people2 = fetch('https://swapi.co/api/people/2')
+                    .then(function (response) {
+                        return response.json();
+                    });
+
+                Promise.all([people1, people2]).then(function (result) {
+                    console.log(result);
+                });
+
+            });
+        });
+    </script>
+</body>
+
+</html>
