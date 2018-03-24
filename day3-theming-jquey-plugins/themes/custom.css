@@ -1,0 +1,43 @@
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+} */
+
+input[type=text].form-control {
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: darkgrey;
+    background: thistle;
+}
+
+button.btn.btn-primary {
+    background: lightcoral;
+    border-color: hotpink;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    border-radius: 0px;
+    border-width: 1px;
+}
+
+.pagination .page-item {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+    -webkit-box-shadow: 1px 1px 10px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 10px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 10px -2px rgba(0, 0, 0, 0.75);
+}
+
+@media (min-width: 576px) {
+    .color-dynamic {
+        color: var(--green);
+    }
+}
+
+@media (min-width: 992px) {
+    .color-dynamic {
+        color: var(--blue);
+    }
+}
